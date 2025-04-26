@@ -15,12 +15,10 @@ const server = http.createServer(app)
 app.use(cors())
 
 // Socket.io setup with CORS
-const io = new Server(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-  },
-})
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL, {
+  transports: ['websocket'],
+  secure: true
+});
 
 // Store active rooms and their participants
 const rooms = new Map()
