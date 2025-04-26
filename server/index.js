@@ -17,7 +17,7 @@ app.use(cors())
 // Socket.io setup with CORS
 const io = new Server(server, {
   cors: {
-    origin: "https://your-frontend-name.vercel.app", // Update this
+    origin: "https://v0-copypaste-clone.vercel.app", // Replace with your frontend URL
     methods: ["GET", "POST"]
   }
 });
